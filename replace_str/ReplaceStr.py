@@ -23,8 +23,8 @@ def listFiles(dirPath):
 
 def main():
 
-    
-    fileDir = input("input dir:")
+    print("Replace the contents of the text")
+    fileDir = input("input path:")
     OldStr  = input("input old string:")
     NewStr  = input("input new string:")
 
@@ -33,7 +33,7 @@ def main():
     fileList = listFiles(fileDir)
     
     for fileObj in fileList:
-        
+        print(fileObj)
         f = open(fileObj,'r+')
         
         all_the_lines = f.readlines()
