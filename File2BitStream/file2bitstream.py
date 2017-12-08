@@ -27,10 +27,14 @@ def GetAllFiles(dirPath):
 
             if filetype == ".wav":
                 print(oriDir)
+                """
                 f_origin = os.open(oriDir, os.O_RDONLY)
                 size = os.path.getsize(oriDir)
+                print(size)
                 buffer = os.read(f_origin, size)
                 os.close(f_origin)
+                """
+                buffer = ReadIntoBuffer(oriDir)
                 new_dir = os.path.join(root, filename + ".h")
                 f_bs = os.open(new_dir, os.O_CREAT | os.O_RDWR)
 
@@ -45,7 +49,7 @@ def GetAllFiles(dirPath):
                 i = 0
                 for index in buffer:
                     format_byte = b"0x%02x," % index
-                    print(format_byte,end='')
+                    #print(format_byte,end='')
                     os.write(f_bs, format_byte)
 
                     i += 1
@@ -54,18 +58,18 @@ def GetAllFiles(dirPath):
                     if i == 16:
                         i = 0
                         os.write(f_bs, b'\n')
-                        print('\n', end='')
-                os.write(f_bs,b"}\n #endif")
+
+                os.write(f_bs,b"}\n#endif")
                 os.close(f_bs)
 
 
 
 def main():
-    print("Replace the name of all files")
+    print("Get the bit stream of file")
 
-    #FileDir = "D:\ENG"
+    FileDir = "D:\ENG"
 
-    FileDir = input("Input path:")
+    #FileDir = input("Input path:")
 
     GetAllFiles(FileDir)
 
