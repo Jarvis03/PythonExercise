@@ -67,9 +67,9 @@ def GetAllFiles(dirPath):
 def main():
     print("Get the bit stream of file")
 
-    FileDir = "D:\ENG"
+    #FileDir = "D:\ENG"
 
-    #FileDir = input("Input path:")
+    FileDir = input("Input path:")
 
     GetAllFiles(FileDir)
 
