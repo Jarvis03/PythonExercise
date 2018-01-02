@@ -25,7 +25,7 @@ def GetAllFiles(dirPath):
             filename = os.path.splitext(fileObj)[0]
             filetype = os.path.splitext(fileObj)[1]
 
-            if filetype == ".wav":
+            if filetype == ".mp3":
                 print(oriDir)
                 """
                 f_origin = os.open(oriDir, os.O_RDONLY)
@@ -59,7 +59,7 @@ def GetAllFiles(dirPath):
                         i = 0
                         os.write(f_bs, b'\n')
 
-                os.write(f_bs,b"}\n#endif")
+                os.write(f_bs,b"};\n#endif")
                 os.close(f_bs)
 
 
@@ -67,9 +67,9 @@ def GetAllFiles(dirPath):
 def main():
     print("Get the bit stream of file")
 
-    FileDir = "D:\ENG"
+    #FileDir = "D:\ENG"
 
-    #FileDir = input("Input path:")
+    FileDir = input("Input path:")
 
     GetAllFiles(FileDir)
 
