@@ -5,3 +5,5 @@ replace name of files
 replace content of files
 ## 3. FileToBitStream: 
 File into a binary stream
+
+add
