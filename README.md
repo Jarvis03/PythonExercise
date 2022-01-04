@@ -6,4 +6,4 @@ replace content of files
 ## 3. FileToBitStream: 
 File into a binary stream
 
-add
+add  0104
